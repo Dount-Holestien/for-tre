@@ -72,6 +72,25 @@
       border-radius: 6px;
       cursor: pointer;
     }
+    .service-button {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .service-button.selected {
+      background-color: #005fa3;
+    }
+    .thank-you-message {
+      display: none;
+      margin-top: 20px;
+      font-weight: bold;
+      color: green;
+    }
     footer {
       background-color: #333;
       color: white;
@@ -104,11 +123,9 @@
 
 <section class="services-section">
   <h2>What We Offer</h2>
-  <ul>
-    <li>Ethical breeding rooted in longevity and structure</li>
-    <li>Early-stage training & temperament conditioning</li>
-    <li>Lifetime support for owners and breeders</li>
-  </ul>
+  <button class="service-button" onclick="toggleService(this)">Ethical breeding rooted in longevity and structure</button>
+  <button class="service-button" onclick="toggleService(this)">Early-stage training & temperament conditioning</button>
+  <button class="service-button" onclick="toggleService(this)">Lifetime support for owners and breeders</button>
 </section>
 
 <section class="testimonials">
@@ -134,7 +151,7 @@
 
 <section class="contact-section" id="contact">
   <h2>Contact Us</h2>
-  <form action="https://formsubmit.co/QualityDevelopmentpns@gmail.com" method="POST">
+  <form id="contact-form" action="https://formsubmit.co/QualityDevelopmentpns@gmail.com" method="POST">
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="email" placeholder="Your Email" required>
     <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
@@ -143,6 +160,7 @@
     <input type="hidden" name="_template" value="table">
     <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
     <button type="submit">Send</button>
+    <div class="thank-you-message" id="thank-you-message">Thank you! Your message has been sent.</div>
   </form>
 </section>
 
@@ -151,6 +169,19 @@
   <p>Email: QualityDevelopmentpns@gmail.com</p>
   <p>Location: [Your City/State]</p>
 </footer>
+
+<script>
+  function toggleService(button) {
+    button.classList.toggle('selected');
+  }
+
+  document.getElementById('contact-form').addEventListener('submit', function (e) {
+    const message = document.getElementById('thank-you-message');
+    setTimeout(() => {
+      message.style.display = 'block';
+    }, 300);
+  });
+</script>
 
 </body>
 </html>
