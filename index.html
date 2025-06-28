@@ -15,6 +15,22 @@
       padding: 40px 20px;
       text-align: center;
     }
+    nav {
+      background-color: #333;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
     .hero {
       background-color: #dceefb;
       padding: 60px 20px;
@@ -29,6 +45,36 @@
       padding: 10px 20px;
       font-size: 1rem;
       margin-top: 20px;
+      cursor: pointer;
+    }
+    .newsletter-section {
+      position: fixed;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      background-color: #f7f7f7;
+      border-radius: 0 8px 8px 0;
+      padding: 20px;
+      width: 200px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    }
+    .newsletter-section h3 {
+      margin-top: 0;
+    }
+    .newsletter-section input[type="email"] {
+      width: 100%;
+      padding: 8px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .newsletter-section button {
+      padding: 8px;
+      width: 100%;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 4px;
       cursor: pointer;
     }
     .mission-section, .vision-section, .services-section, .testimonials, .gallery, .faq, .contact-section {
@@ -100,13 +146,31 @@
 </head>
 <body>
 
+<nav>
+  <a href="#mission">Mission</a>
+  <a href="#vision">Vision</a>
+  <a href="#services">Services</a>
+  <a href="#testimonials">Testimonials</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<div class="newsletter-section">
+  <h3>Newsletter</h3>
+  <form>
+    <input type="email" placeholder="Your email" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+
 <header class="hero">
   <h1>Quality Development PNS</h1>
   <p>Strength. Loyalty. Legacy.</p>
   <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact Us</button>
 </header>
 
-<section class="mission-section">
+<section class="mission-section" id="mission">
   <h2>Our Mission</h2>
   <p>Focusing on the physical and mental health of all dogs bred, <strong>mind follows body, body follows function</strong>.</p>
   <p>We ensure conducting breeding practices with the highest ethical standards, always putting the welfare of the dog first.</p>
@@ -114,33 +178,33 @@
   <p>We focus on establishing long-term relationships with dog owners, offering guidance and support throughout the life of the dog.</p>
 </section>
 
-<section class="vision-section">
+<section class="vision-section" id="vision">
   <h2>Our Vision</h2>
   <p>At the heart of our program is a commitment to creating exceptional dogs — powerful, intelligent, and loyal companions bred from a legacy of longevity and balance.</p>
   <p>We blend the strength of old-school bloodlines with the vitality of modern genetics to produce bulls built to thrive — both in your home and in your breeding program.</p>
   <p>Our dogs come from generations that lived 10+ years, proving their durability and heart over time. Whether you’re looking to add proven longevity to your bloodline or a steady, loving companion to your family, our bulls are bred to stand the test of time — on your couch, by your side, and in your legacy.</p>
 </section>
 
-<section class="services-section">
+<section class="services-section" id="services">
   <h2>What We Offer</h2>
   <button class="service-button" onclick="toggleService(this)">Ethical breeding rooted in longevity and structure</button>
   <button class="service-button" onclick="toggleService(this)">Early-stage training & temperament conditioning</button>
   <button class="service-button" onclick="toggleService(this)">Lifetime support for owners and breeders</button>
 </section>
 
-<section class="testimonials">
+<section class="testimonials" id="testimonials">
   <h2>What Our Clients Say</h2>
   <blockquote>“Our pup is the most balanced and intelligent dog we’ve ever owned. Couldn’t be happier!”</blockquote>
   <cite>— Maria T.</cite>
 </section>
 
-<section class="gallery">
+<section class="gallery" id="gallery">
   <h2>Gallery</h2>
   <img src="dog1.jpg" alt="Happy dog">
   <img src="dog2.jpg" alt="Playful puppy">
 </section>
 
-<section class="faq">
+<section class="faq" id="faq">
   <h2>Frequently Asked Questions</h2>
   <ul>
     <li><strong>Are your dogs registered?</strong> – All our dogs come with full paperwork and vet history.</li>
