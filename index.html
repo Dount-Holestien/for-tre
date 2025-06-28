@@ -4,187 +4,108 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quality Development PNS</title>
-  <style>
-    :root {
-      --primary: #001f3f;
-      --secondary: #ffcc00;
-      --accent: #0077cc;
-      --text-dark: #333;
-      --text-light: #fff;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background-color: #f4f4f4;
-      color: var(--text-dark);
-    }
-    header, footer, section {
-      padding: 40px 20px;
-      text-align: center;
-    }
-    nav {
-      background-color: var(--primary);
-      padding: 10px 0;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
-    nav a {
-      color: var(--text-light);
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      text-decoration: underline;
-      color: var(--secondary);
-    }
-    .hero {
-      background-color: var(--primary);
-      color: var(--text-light);
-      padding: 60px 20px;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-    }
-    .hero p {
-      font-size: 1.2rem;
-    }
-    .hero button {
-      padding: 10px 20px;
-      font-size: 1rem;
-      margin-top: 20px;
-      cursor: pointer;
-      background-color: var(--secondary);
-      color: var(--primary);
-      border: none;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-    .hero button:hover {
-      background-color: #e6b800;
-    }
-    .newsletter-section {
-      position: fixed;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-      background-color: #f7f7f7;
-      border-radius: 0 8px 8px 0;
-      padding: 20px;
-      width: 200px;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-    }
-    .newsletter-section h3 {
-      margin-top: 0;
-    }
-    .newsletter-section input[type="email"] {
-      width: 100%;
-      padding: 8px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    .newsletter-section button {
-      padding: 8px;
-      width: 100%;
-      background-color: var(--primary);
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-    .newsletter-section button:hover {
-      background-color: #004080;
-    }
-    .mission-section, .vision-section, .services-section, .testimonials, .gallery, .faq, .contact-section {
-      max-width: 800px;
-      margin: 0 auto;
-      background-color: white;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    }
-    .mission-section, .services-section, .faq {
-      background-color: #f7f7f7;
-    }
-    .vision-section {
-      background-color: #e9f5ff;
-    }
-    .gallery img {
-      width: 100%;
-      max-width: 400px;
-      margin: 10px auto;
-      border-radius: 5px;
-      transition: transform 0.3s;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-    ul {
-      text-align: left;
-      list-style: disc inside;
-    }
-    blockquote {
-      font-style: italic;
-      margin: 20px auto;
-      border-left: 5px solid var(--accent);
-      padding-left: 15px;
-    }
-    .contact-section input,
-    .contact-section textarea {
-      width: 100%;
-      max-width: 600px;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-    .contact-section button {
-      padding: 10px 30px;
-      background-color: var(--accent);
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-    .contact-section button:hover {
-      background-color: #005fa3;
-    }
-    .service-button {
-      display: inline-block;
-      margin: 10px;
-      padding: 10px 20px;
-      background-color: var(--accent);
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s, transform 0.2s;
-    }
-    .service-button.selected {
-      background-color: var(--primary);
-    }
-    .service-button:hover {
-      background-color: #005fa3;
-      transform: scale(1.02);
-    }
-    .thank-you-message {
-      display: none;
-      margin-top: 20px;
-      font-weight: bold;
-      color: green;
-    }
-    footer {
-      background-color: var(--primary);
-      color: white;
-      font-size: 0.9rem;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  
 </head>
+<body>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#mission">Mission</a>
+    <a href="#vision">Vision</a>
+    <a href="#services">Services</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header id="home" class="hero">
+    <h1>Quality Development PNS</h1>
+    <p>Transforming communities through sustainable development and innovation</p>
+    <button onclick="scrollToContact()">Get Started</button>
+  </header>
+
+  <div class="newsletter-section">
+    <h3>Newsletter</h3>
+    <input type="email" id="newsletter-email" placeholder="Enter your email">
+    <button onclick="subscribeNewsletter()">Subscribe</button>
+  </div>
+
+  <section id="mission" class="mission-section">
+    <h2>Our Mission</h2>
+    <p>We are dedicated to creating sustainable solutions that improve the quality of life in communities across the region. Our mission is to bridge the gap between innovative technology and practical community needs.</p>
+  </section>
+
+  <section id="vision" class="vision-section">
+    <h2>Our Vision</h2>
+    <p>To be the leading organization in sustainable community development, fostering growth through collaboration, innovation, and environmental stewardship.</p>
+  </section>
+
+  <section id="services" class="services-section">
+    <h2>Our Services</h2>
+    <div>
+      <button class="service-button" onclick="selectService(this, 'consulting')">Consulting</button>
+      <button class="service-button" onclick="selectService(this, 'development')">Development</button>
+      <button class="service-button" onclick="selectService(this, 'training')">Training</button>
+      <button class="service-button" onclick="selectService(this, 'support')">Support</button>
+    </div>
+    <div id="service-details">
+      <p>Select a service above to learn more about what we offer.</p>
+    </div>
+  </section>
+
+  <section id="testimonials" class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <blockquote>
+      "Quality Development PNS transformed our community with their innovative approach and dedication to excellence."
+      <footer>- Maria Santos, Community Leader</footer>
+    </blockquote>
+    <blockquote>
+      "Their professional team delivered results beyond our expectations. Highly recommended!"
+      <footer>- John Rodriguez, Project Manager</footer>
+    </blockquote>
+  </section>
+
+  <section id="gallery" class="gallery">
+    <h2>Our Work</h2>
+    <img src="https://via.placeholder.com/400x300/0077cc/ffffff?text=Project+1" alt="Project 1">
+    <img src="https://via.placeholder.com/400x300/001f3f/ffffff?text=Project+2" alt="Project 2">
+    <img src="https://via.placeholder.com/400x300/ffcc00/333333?text=Project+3" alt="Project 3">
+  </section>
+
+  <section id="faq" class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div onclick="toggleFAQ('faq1')">
+      <h3>What services do you offer? <span id="faq1-icon">+</span></h3>
+      <div id="faq1" style="display: none;">
+        <p>We offer consulting, development, training, and ongoing support services for community development projects.</p>
+      </div>
+    </div>
+    <div onclick="toggleFAQ('faq2')">
+      <h3>How long do projects typically take? <span id="faq2-icon">+</span></h3>
+      <div id="faq2" style="display: none;">
+        <p>Project timelines vary depending on scope and complexity, typically ranging from 3 months to 2 years.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <h2>Contact Us</h2>
+    <form onsubmit="submitContact(event)">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div id="thank-you" class="thank-you-message">
+      Thank you for your message! We'll get back to you soon.
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Quality Development PNS. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
