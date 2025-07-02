@@ -150,6 +150,17 @@ nav a:hover {
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  text-align: justify;
+}
+
+.mission-section h2,
+.vision-section h2,
+.services-section h2,
+.testimonials h2,
+.gallery h2,
+.faq h2,
+.contact-section h2 {
+  text-align: center;
 }
 
 .mission-section,
@@ -247,6 +258,12 @@ blockquote {
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  text-align: justify;
+}
+
+.reviews-section h2,
+.reviews-section h3 {
+  text-align: center;
 }
 
 .review-form {
